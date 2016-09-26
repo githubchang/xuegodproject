@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>曹老师商城注册页面</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<center>
+		<h3>添加用户信息</h3>
+		<form action="../houtai/users/add.php" method="post">
+			<table width="300" border="0">
+			<tr>
+				<td>账号:</td>
+				<td><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td>真实姓名:</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>密码:</td>
+				<td><input type="password" name="pass"></td>
+			</tr>
+			<tr>
+				<td>性别:</td>
+				<td>男<input type="radio" name="sex" value="0" checked>&nbsp;&nbsp;&nbsp;&nbsp;女<input type="radio" name="sex" value="1"></td>
+			</tr>
+			<tr>
+				<td>地址:</td>
+				<td><input type="text" name="address"></td>
+			</tr>
+			<tr>
+				<td>邮编:</td>
+				<td><input type="text" name="code"></td>
+			</tr>
+			<tr>
+				<td>电话:</td>
+				<td><input type="text" name="phone"></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+		<!--
+			<tr>
+				<td>状态:</td>
+				<td><input type="text" name="state"></td>
+			</tr>
+			<tr>
+				<td>注册时间:</td>
+				<td><input type="text" name="addtime"></td>
+			</tr>
+		-->
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" value="添加">
+					<input type="reset" value="重置">
+				</td>
+			</tr>
+			
+			</table>
+		</form>
+	</center>
+</body>
+</html>
