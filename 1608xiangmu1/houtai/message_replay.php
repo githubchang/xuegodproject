@@ -75,7 +75,7 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
   </tr>
   <tr>
     <td align="left" valign="top" id="addinfo">
-    <a href="index1.php" target="mainFrame" onFocus="this.blur()" class="add">返回上一级</a>
+    <a href="main_list.php" target="main" onFocus="this.blur()" class="add">返回上一级</a>
     </td>
   </tr>
   <tr>

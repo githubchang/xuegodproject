@@ -23,7 +23,7 @@
 	<frameset id="attachucp" framespacing="0" border="0" frameborder="no" cols="194,12,*" rows="*">
 		<frame scrolling="auto" noresize="" frameborder="no" name="leftFrame" src="left.php"></frame>
 		<frame id="leftbar" scrolling="no" noresize="" name="switchFrame" src="swich.html"></frame>
-		<frame scrolling="auto" noresize="" border="0" name="mainFrame" src="main.html"></frame>
+		<frame scrolling="auto" noresize="" border="0" name="main" src="main.html"></frame>
 	</frameset>
 <!--bottom样式-->
 	<frame src="bottom.html" name="bottomFrame" scrolling="No" noresize="noresize" id="bottomFrame" title="bottomFrame" />

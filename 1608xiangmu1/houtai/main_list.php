@@ -45,7 +45,7 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
 	         <input name="" type="submit" value="查询" class="text-but">
 	         </form>
          </td>
-  		  <td width="10%" align="center" valign="middle" style="text-align:right; width:150px;"><a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">新增管理员</a></td>
+  		  <td width="10%" align="center" valign="middle" style="text-align:right; width:150px;"><a href="add.html" target="mainocus="this.blur()" class="add">新增管理员</a></td>
   		</tr>
 	</table>
     </td>
@@ -127,13 +127,13 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     </tr>
   <tr>
     <td align="left" valign="top" class="fenye">共<?php echo $allpage; ?>条数据 <?php echo $nowpage; ?>/<?php echo $maxpage; ?> 页&nbsp;&nbsp;
-    <a href="main_list.php?page=<?php echo 1;?>" target="mainFrame" onFocus="this.blur()">
+    <a href="main_list.php?page=<?php echo 1;?>" target="main" onFocus="this.blur()">
     首页
-    </a>&nbsp;&nbsp;<a href="main_list.php?page=<?php echo $a = $nowpage==1 ? 1:$nowpage-1;?>" target="mainFrame" onFocus="this.blur()">
+    </a>&nbsp;&nbsp;<a href="main_list.php?page=<?php echo $a = $nowpage==1 ? 1:$nowpage-1;?>" target="main" onFocus="this.blur()">
     上一页
-    </a>&nbsp;&nbsp;<a href="main_list.php?page=<?php echo $a = $nowpage==$maxpage ? $maxpage:$nowpage+1;?>" target="mainFrame" onFocus="this.blur()">
+    </a>&nbsp;&nbsp;<a href="main_list.php?page=<?php echo $a = $nowpage==$maxpage ? $maxpage:$nowpage+1;?>" target="main" onFocus="this.blur()">
     下一页
-    </a>&nbsp;&nbsp;<a href="main_list.php?page=<?php echo $maxpage;?>" target="mainFrame" onFocus="this.blur()">
+    </a>&nbsp;&nbsp;<a href="main_list.php?page=<?php echo $maxpage;?>" target="main" onFocus="this.blur()">
     尾页</a></td>
   </tr>
 </table>
