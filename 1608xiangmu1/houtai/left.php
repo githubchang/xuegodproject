@@ -38,9 +38,9 @@ body{overflow-x:hidden; background:url(images/main/leftbg.jpg) left top repeat-y
       </div>
       <div>
         <span>分类设置</span>
-        <a href="./type/main_menu2.php" target="main" onFocus="this.blur()">管理分类</a>
+        <a href="./type/main_menu2.php" target="main" onFocus="this.blur()">商品分类</a>
         <a href="./type/goods_add2.php" target="main" onFocus="this.blur()">添加主分类</a>
-        <a href="main_info.html" target="main" onFocus="this.blur()">角色管理</a>
+        <a href="./goods/index.php" target="main" onFocus="this.blur()">商品管理</a>
         <a href="main.html" target="main" onFocus="this.blur()">自定义权限</a>
       </div>
       <div>
