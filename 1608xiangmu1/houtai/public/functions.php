@@ -6,7 +6,7 @@ header('Content-Type:text/html;Charset=UTF-8');
 	$upfile = $_FILES['name'];//被上传文件的信息
     //$upfile = $_POST['name'];
 	$path = "./uploads/";//上传文件存储目录
-	$typeList = array("image/gif","image/png","image/jpeg");//允许上传的文件类型
+	$typeList = array("image/gif","image/png","image/jpeg",'image/jpg');//允许上传的文件类型
 	$maxSize = 1024000;//允许上传的文件大小
 
 

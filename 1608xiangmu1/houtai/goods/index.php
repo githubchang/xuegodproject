@@ -55,22 +55,22 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="main-tab">
       <tr>
-        <th align="center" valign="middle" class="borderright">用户id</th>
-        <th align="center" valign="middle" class="borderright">账号</th>
-        <th align="center" valign="middle" class="borderright">真实姓名</th>
-        <th align="center" valign="middle" class="borderright">密码</th>
-        <th align="center" valign="middle" class="borderright">性别</th>
-        <th align="center" valign="middle" class="borderright">地址</th>
-        <th align="center" valign="middle" class="borderright">邮编</th>
-        <th align="center" valign="middle" class="borderright">电话</th>
-        <th align="center" valign="middle" class="borderright">Email</th>
+        <th align="center" valign="middle" class="borderright">商品id</th>
+        <th align="center" valign="middle" class="borderright">类型</th>
+        <th align="center" valign="middle" class="borderright">商品名称</th>
+        <th align="center" valign="middle" class="borderright">公司</th>
+        <th align="center" valign="middle" class="borderright">简介</th>
+        <th align="center" valign="middle" class="borderright">价格</th>
+        <th align="center" valign="middle" class="borderright">图片名称</th>
         <th align="center" valign="middle" class="borderright">状态</th>
-        <th align="center" valign="middle" class="borderright">注册时间</th>
+        <th align="center" valign="middle" class="borderright">商城</th>
+        <th align="center" valign="middle" class="borderright">数量</th>
+        <th align="center" valign="middle" class="borderright">点击次数</th>
+        <th align="center" valign="middle" class="borderright">添加时间</th>
         <th align="center" valign="middle">操作</th>
       </tr>
       <?php
-            //用户信息的查询
-            $sex = array(0=>"男", 1=>"女");
+            
             //1.导入配置文件
             require("../public/config.php");
             //2.链接数据库处理判断
@@ -84,25 +84,30 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
             //3.limit从哪里开始拿
             $start = ($nowpage-1)*$everypage;
             //4.定义sql语句发送并执行
-            $sql = "select * from users limit $start,$everypage";
+            $sql = "select * from goods limit $start,$everypage";
             //echo $sql;
             $result = mysqli_query($link,$sql);
             //var_dump($result);
+            //0.定义相关量state 1：、2：在售、3：下架
+            $arrstate = array('1' => '新添加','2' => '在售','3' => '下架' );
             //5.遍历结果集并输出
             while($row = mysqli_fetch_assoc($result)){  
+                $date = date('Y-m-d', $row['addtime']);
                 echo "<tr/>";
                 echo "<td align='center'>{$row['id']}</td>";
-                echo "<td align='center'>{$row['username']}</td>";
-                echo "<td align='center'>{$row['name']}</td>";
-                echo "<td align='center'>{$row['pass']}</td>";
-                echo "<td align='center'>{$sex[$row['sex']]}</td>";
-                echo "<td align='center'>{$row['address']}</td>";
-                echo "<td align='center'>{$row['code']}</td>";
-                echo "<td align='center'>{$row['phone']}</td>";
-                echo "<td align='center'>{$row['email']}</td>";
-                echo "<td align='center'>{$row['state']}</td>";
-                echo "<td align='center'>{$row['addtime']}</td>";
-                echo "<td align='center'><a href='./message_replay.php?id={$row['id']}'>修改</a>&nbsp;|&nbsp;<a href='./users/delete.php?id={$row['id']}'>删除</a></td>";
+                echo "<td align='center'>{$row['typeid']}</td>";
+                echo "<td align='center'>{$row['goods']}</td>";
+                echo "<td align='center'>{$row['company']}</td>";
+                echo "<td align='center'>{$row['descr']}</td>";
+                echo "<td align='center'>{$row['price']}</td>";
+                //echo "<td align='center'>{$row['picname']}</td>";
+                echo "<td align='center'><img src='../public/uploads/s_".$row['picname']."'alt='url'></td>";
+                echo "<td align='center'>{$arrstate[$row['state']]}</td>";
+                echo "<td align='center'>{$row['store']}</td>";
+                echo "<td align='center'>{$row['num']}</td>";
+                echo "<td align='center'>{$row['clicknum']}</td>";
+                echo "<td align='center'>{$date}</td>";
+                echo "<td align='center'><a href='./edit.php?id={$row['id']}'>修改</a>&nbsp;|&nbsp;<a href='./action.php?a=doDel&id={$row['id']}'>删除</a></td>";
                 echo "<tr/>";
             }
 /*
@@ -115,16 +120,16 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
 首页  $nowpage=1
 尾页 $maxpage
 */
-    $allpage1 = "select count(*) from users";
+/*php分页*/
+    $allpage1 = "select count(*) from goods";
     $allpage1 = mysqli_query($link,$allpage1);
     $allpage1 = mysqli_fetch_assoc($allpage1);
     $allpage = $allpage1["count(*)"];
     $maxpage = ceil($allpage/$everypage);
-    //var_dump($allpage);
     ?>
-
     </table></td>
     </tr>
+<!--html分页开始-->
   <tr>
     <td align="left" valign="top" class="fenye">共<?php echo $allpage; ?>条数据 <?php echo $nowpage; ?>/<?php echo $maxpage; ?> 页&nbsp;&nbsp;
     <a href="index.php?page=<?php echo 1;?>" target="main" onFocus="this.blur()">
@@ -136,6 +141,7 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     </a>&nbsp;&nbsp;<a href="index.php?page=<?php echo $maxpage;?>" target="main" onFocus="this.blur()">
     尾页</a></td>
   </tr>
+<!--html分页结束-->
 </table>
 </body>
 </html>

@@ -17,16 +17,17 @@ header('content-type:text/html;charset=utf-8');
 		mysqli_set_charset($link,"utf8");
 		//4.定义sql语句发送并执行
 		$sql = "select * from users where username = '{$username}'";
-		echo $sql;
+		$state = 1;
+		//echo $sql;
 		//echo "用户名不存在";
 		//die();
 		$result = mysqli_query($link,$sql);
 		//后台的登录注册 自己完成。		
 		while($row = mysqli_fetch_assoc($result)){       
-            echo "<td>{$row['id']}</td>";
+            /*echo "<td>{$row['id']}</td>";
             echo "<td>{$row['name']}</td>";
             echo "<td>{$row['pass']}</td>";
-			echo "{$row['state']}";
+			echo "{$row['state']}";*/
 			if($row['username'] !== $username){
 				echo '用户名不存在';
 				die();
@@ -37,10 +38,10 @@ header('content-type:text/html;charset=utf-8');
 				echo "权限不够，不能够登录";
 				die();
 			}else{	
-				echo '登录成功';
+				//echo '登录成功';
 				//将成功登陆的用户信息写入session
 				$_SESSION['adminuser'] = $username;
-				echo $_SESSION['adminuser'];	
+				//echo $_SESSION['adminuser'];	
 			}           
         }
 	

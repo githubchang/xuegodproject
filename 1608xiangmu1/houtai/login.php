@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>后台管理登录界面</title>
+    <title>php1601畅畅后台管理登录界面</title>
     <link href="css/alogin.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -12,7 +12,7 @@
             <li class="top"></li>
             <li class="top2"></li>
             <li class="topA"></li>
-            <li class="topB"><span><img src="images/login/logo.gif" alt="" style="" /></span></li>
+            <li class="topB"><span><img src="images/login/logo.png" alt="" style="" /></span></li>
             <li class="topC"></li>
             <li class="topD">
                 <ul class="login">

@@ -60,7 +60,6 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     $link = mysqli_connect(HOST,USER,PASS,DBNAME) or die('连接数据库失败');
     mysqli_set_charset($link,"utf8");
     $sql = "select * from type order by concat(path,id)";
-    echo $sql;
     //die();
     $result = mysqli_query($link,$sql);
     while($row = mysqli_fetch_assoc($result)){ 
